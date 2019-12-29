@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 String saddress = address.getText().toString();
                 String semail = email.getText().toString();
 
-                Toast.makeText(MainActivity.this, "Hello Bro...!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,saddress, Toast.LENGTH_LONG).show();
             }
         });
     }
