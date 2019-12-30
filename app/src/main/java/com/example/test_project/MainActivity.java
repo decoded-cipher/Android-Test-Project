@@ -10,15 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    EditText name, address, email, gender, dob, mobile;
+    String sname, saddress, semail;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final EditText name, address, email, gender, dob, mobile;
-//        final String sname, saddress, semail;
-        Button next;
 
         name = findViewById(R.id.name);
         address = findViewById(R.id.address);
@@ -27,19 +26,19 @@ public class MainActivity extends AppCompatActivity {
         mobile = findViewById(R.id.mobile);
         next = findViewById(R.id.next);
 
-
+//        String saddress = address.getText().toString();
+//        String semail = email.getText().toString();
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this,NextActivity.class);
-//                startActivity(intent);
                 String sname = name.getText().toString();
-                String saddress = address.getText().toString();
-                String semail = email.getText().toString();
-
-                Toast.makeText(MainActivity.this,saddress, Toast.LENGTH_LONG).show();
+                Intent i1 = new Intent(getApplicationContext(),NextActivity.class);
+                i1.putExtra("myname", sname);
+//                Toast.makeText(MainActivity.this,sname, Toast.LENGTH_SHORT).show();
+                startActivity(i1);
             }
         });
+        }
+
     }
-}
