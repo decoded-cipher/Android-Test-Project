@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText name, address, email, dob, mobile;
-    String sname, saddress, semail;
+    String sname, saddress, semail, smobile, sgender;
     Button next;
     RadioGroup gender;
     RadioButton temp;
@@ -28,31 +28,28 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         dob = findViewById(R.id.dob);
         mobile = findViewById(R.id.mobile);
-
         gender = findViewById(R.id.gender);
-
         next = findViewById(R.id.next);
-
-//        String saddress = address.getText().toString();
-//        String semail = email.getText().toString();
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                int xyz = gender.getCheckedRadioButtonId();
-                temp = findViewById(xyz);
-
-                Intent i1 = new Intent(getApplicationContext(),NextActivity.class);
-
                 sname = name.getText().toString();
                 saddress = address.getText().toString();
+                semail = email.getText().toString();
 
+                int xyz = gender.getCheckedRadioButtonId();
+                temp = findViewById(xyz);
+                sgender = temp.getText().toString();
+
+                Intent i1 = new Intent(getApplicationContext(),NextActivity.class);
                 i1.putExtra("myname", sname);
                 i1.putExtra("myaddress",saddress);
+                i1.putExtra("myemail",semail);
+                i1.putExtra("mygender",sgender);
 
-
-                Toast.makeText(MainActivity.this, temp.getText() , Toast.LENGTH_LONG).show();
+//                Toast.makeText(MainActivity.this, sgender , Toast.LENGTH_LONG).show();
                 startActivity(i1);
             }
         });

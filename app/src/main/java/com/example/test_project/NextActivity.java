@@ -13,7 +13,7 @@ public class NextActivity extends AppCompatActivity {
 
     Intent i2,i3;
     Button submit;
-    String display_name, display_address;
+    String display_name, display_address, display_email, display_gender;
 //    TextView display;
 
     @Override
@@ -30,10 +30,14 @@ public class NextActivity extends AppCompatActivity {
                 i2 = getIntent();
                 display_name = i2.getStringExtra("myname");
                 display_address = i2.getStringExtra("myaddress");
+                display_email = i2.getStringExtra("myemail");
+                display_gender = i2.getStringExtra("mygender");
 
                 i3 = new Intent(getApplicationContext(),SubmitActivity.class);
-                i3.putExtra("disp_name",display_name);
-                i3.putExtra("disp_address",display_address);
+                i3.putExtra("myname",display_name);
+                i3.putExtra("myaddress",display_address);
+                i3.putExtra("myemail",display_email);
+                i3.putExtra("mygender",display_gender);
                 startActivity(i3);
 
 //                Toast.makeText(NextActivity.this, display_name, Toast.LENGTH_SHORT).show();

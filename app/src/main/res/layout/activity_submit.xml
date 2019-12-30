@@ -41,7 +41,23 @@
         android:paddingBottom="5dp"/>
 
     <TextView
+        android:id="@+id/disp_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:paddingBottom="5dp"/>
+
+    <TextView
         android:id="@+id/disp_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/disp_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
