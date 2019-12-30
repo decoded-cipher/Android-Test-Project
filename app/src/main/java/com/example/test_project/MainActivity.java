@@ -39,14 +39,21 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int xyz = gender.getCheckedRadioButtonId();
                 temp = findViewById(xyz);
 
-                String sname = name.getText().toString();
                 Intent i1 = new Intent(getApplicationContext(),NextActivity.class);
+
+                sname = name.getText().toString();
+                saddress = address.getText().toString();
+
                 i1.putExtra("myname", sname);
+                i1.putExtra("myaddress",saddress);
+
+
                 Toast.makeText(MainActivity.this, temp.getText() , Toast.LENGTH_LONG).show();
-//                startActivity(i1);
+                startActivity(i1);
             }
         });
         }
