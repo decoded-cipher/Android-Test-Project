@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     String usrname, passwrd, user, pass;
     Intent log1;
+    Bundle b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (user.equals(usrname) && pass.equals(passwrd)) {
 //                    Toast.makeText(getApplicationContext(), "Credentials Accepted!", Toast.LENGTH_LONG).show();
                     Intent log1 = new Intent(getApplicationContext(),LoginResult.class);
-                    log1.putExtra("username",user);
+                    b1 = new Bundle();
+                    b1.putString("username",user);
+
+                    log1.putExtras(b1);
                     startActivity(log1);
                 }
                 else {

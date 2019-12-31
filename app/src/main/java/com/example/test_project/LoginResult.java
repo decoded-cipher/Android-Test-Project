@@ -9,8 +9,9 @@ import android.widget.TextView;
 public class LoginResult extends AppCompatActivity {
 
     Intent log2;
-    String user;
+    String user, xyz;
     TextView result;
+    Bundle b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,9 @@ public class LoginResult extends AppCompatActivity {
         result = findViewById(R.id.result);
 
         log2 = getIntent();
-        user = log2.getStringExtra("username");
-
-        result.setText("Congrats "+user);
+//        user = log2.getStringExtra("username");
+        b2 = log2.getExtras();
+        xyz = b2.getString("username");
+        result.setText("Congrats "+xyz);
     }
 }
